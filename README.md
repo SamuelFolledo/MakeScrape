@@ -4,6 +4,10 @@
 
 _Create your very own web scraper and crawler using Go and [Colly](https://go-colly.org)!_
 
+<p align="center">
+  <img width="230" height="230" src="https://github.com/SamuelFolledo/MakeSite/blob/master/static/myGopher.png">
+</p>
+
 ### 📚 Table of Contents
 
 1. [Project Structure](#project-structure)
