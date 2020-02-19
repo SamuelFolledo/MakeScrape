@@ -30,9 +30,9 @@ func main() {
 	}
 	defer db.Close()
 
-	var deal Deal
-	db.First(&deal, 1)
-	println("DEAL 1 = ", deal.Name)
+	// var deal Deal
+	// db.First(&deal, 1)
+	// println("DEAL 1 = ", deal.Name)
 }
 
 func testDB() {
@@ -77,8 +77,7 @@ func scrapeEbay() {
 	if err != nil {
 		panic("failed to connect database")
 	}
-	defer db.Close()
-
+	// defer db.Close()
 	// Migrate the schema
 	db.AutoMigrate(&Deal{})
 
@@ -103,8 +102,8 @@ func scrapeEbay() {
 		// print("\n++++++++E TEXT = ", e.Text, "\n\n")
 		// print("\n++++++++E DOM = ", e.DOM.Text(), "\n\n") //e.DOM.Text() returns the same as e.Text
 		var dealsScraped = e.DOM.Text()
-		createDealFromScrapedText(dealsScraped)
-
+		deal := createDealFromScrapedText(dealsScraped)
+		db.Create(&deal)
 		// fmt.Printf("\n++++++++Link found: -> %s\n\n", e.Attr("href"))
 		// fmt.Println("PARAGRAPHS", e.DOM.Find("p").Text())
 		// var scrapeResult = e.DOM.Text()
@@ -128,23 +127,28 @@ func scrapeEbay() {
 	// }
 
 	c.Wait() // Wait until threads are finished
+
+	deals := Deal{}
+	db.Find(&deals)
+
+	fmt.Println("\n\nDEALS ARE ===== ", deals.Name)
+	// for _, deal := range deals {
+
+	// }
+
+	defer db.Close()
 }
 
-func createDealFromScrapedText(dealsScraped string) {
-	dealArray := strings.Split(dealsScraped, "$")
-	// fmt.Println("deals Scraped = ", s)
+func createDealFromScrapedText(dealsScraped string) Deal {
+	dealArray := strings.Split(dealsScraped, "$") //separate string by dollar sign
 	var name = dealArray[0]
-	currentPrice, _ := strconv.ParseFloat(dealArray[1], 64)
+	currentPrice, _ := strconv.ParseFloat(dealArray[1], 8)
 	var previousPrice float64
-	if len(dealArray) > 2 {
-		prev, _ := strconv.ParseFloat(dealArray[2], 64)
+	if len(dealArray) > 2 { //if array's length is > 2, then we have previousPrice
+		prev, _ := strconv.ParseFloat(dealArray[2], 8)
 		previousPrice = prev
 	}
 	// for index, word := range s {
-	// 	fmt.Println(index, word)
-	// }
-	print("DEAL IS ", name, " CURRENT PRICE = ", currentPrice, " PREVIOUSLY = ", previousPrice)
-	// db.Create(
-	// 	&Deal{Name: e.DOM.Text(), Price: 1000},
-	// )
+	print("\nDEAL IS ", name, " CURRENT PRICE = ", currentPrice, " PREVIOUSLY = ", previousPrice)
+	return Deal{Name: name, CurrentPrice: currentPrice, PreviousPrice: previousPrice}
 }
