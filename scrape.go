@@ -3,6 +3,7 @@ package main
 import (
 	"encoding/json"
 	"fmt"
+	"io/ioutil"
 	"log"
 	"net/http"
 	"strconv" //convert string to float
@@ -104,7 +105,8 @@ func scrapeEbay() {
 			// var res Deal
 			// json.Unmarshal(bytes, &res) //returns it back to Deal struct
 		}
-		return ec.String(http.StatusOK, jsonString)
+		writeToFile("output.json", jsonString)
+		return ec.String(http.StatusOK, jsonString) //display jsonString to echo
 	})
 
 	e.Logger.Fatal(e.Start(":1323"))
@@ -125,4 +127,21 @@ func createDealFromScrapedText(dealsScraped string) Deal {
 	}
 	print("\nDEAL IS ", name, " CURRENT PRICE = ", currentPrice, " PREVIOUSLY = ", previousPrice)
 	return Deal{Name: name, CurrentPrice: currentPrice, PreviousPrice: previousPrice}
+}
+
+func isError(err error) bool { //error helper
+	if err != nil {
+		fmt.Println(err.Error())
+		panic(err)
+	}
+	return (err != nil)
+}
+
+//write to a file given a name and lines to write
+func writeToFile(fileName, lines string) {
+	bytesToWrite := []byte(lines)                         //data written
+	err := ioutil.WriteFile(fileName, bytesToWrite, 0644) //filename, byte array (binary representation), and 0644 which represents permission number. (0-777) //will create a new text file if that text file does not exist yet
+	if isError(err) {
+		return
+	}
 }
