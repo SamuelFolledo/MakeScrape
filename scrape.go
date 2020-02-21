@@ -4,7 +4,6 @@ import (
 	"encoding/json"
 	"fmt"
 	"io/ioutil"
-	"log"
 	"net/http"
 	"strconv" //convert string to float
 	"strings"
@@ -65,8 +64,8 @@ func testDB() {
 }
 
 func scrapeEbay() {
-	// Instantiate default collector
-	c := colly.NewCollector(
+
+	c := colly.NewCollector( // Instantiate default collector
 		colly.Async(false),                   // Turn on asynchronous requests, this stuff could return before or after.
 		colly.Debugger(&debug.LogDebugger{}), // Attach a debugger to the collector
 	)
@@ -76,12 +75,12 @@ func scrapeEbay() {
 	// On every a element which has href attribute call callback
 	c.OnHTML("#refit-spf-container > div.sections-container > div.ebayui-dne-featured-card.ebayui-dne-featured-with-padding > div.ebayui-dne-item-featured-card.ebayui-dne-item-featured-card > div > div > div > div.dne-itemtile-detail", func(e *colly.HTMLElement) {
 		var dealsScraped = e.DOM.Text()
-		deal := createDealFromScrapedText(dealsScraped)
+		deal := createDealFromScrapedText(dealsScraped)       //create a Deal from scraped text
 		dealJson, err := json.MarshalIndent(deal, "", "    ") //makes it more pretty printed
-		if err != nil {
-			log.Println(err)
+		if isError(err) {
+			return
 		}
-		deals = append(deals, dealJson) //create deals from scraped text and append to slice of Deal
+		deals = append(deals, dealJson) //append deal created to deal json
 		// db.Create(&deal)
 	})
 
@@ -94,28 +93,24 @@ func scrapeEbay() {
 		fmt.Println("Finished", r.Request.URL)
 	})
 
+	c.Visit("https://www.ebay.com/deals")
+
+	c.Wait() // Wait until threads are finished
+
+	//Having this here doesn't work, but if created from e.GET then it works
+	jsonString := dealSliceToString(deals) //create a string from deals array
+	writeToFile("output.json", jsonString) //write it to a json file
+
+	//Start echo and display it on our browser
 	e := echo.New() //create a server
 	e.GET("/scrape", func(ec echo.Context) (err error) {
-		c.Visit("https://www.ebay.com/deals")
-		c.Wait()
-
-		var jsonString string
-		for _, dealJson := range deals { //loop through each JSON and add it to jsonString
-			jsonString += (string(dealJson) + "\n")
-			// var res Deal
-			// json.Unmarshal(bytes, &res) //returns it back to Deal struct
-		}
-		writeToFile("output.json", jsonString)
 		return ec.String(http.StatusOK, jsonString) //display jsonString to echo
 	})
 
 	e.Logger.Fatal(e.Start(":1323"))
-
-	c.Visit("https://www.ebay.com/deals")
-
-	c.Wait() // Wait until threads are finished
 }
 
+//creates a Deal instance from a string
 func createDealFromScrapedText(dealsScraped string) Deal {
 	dealArray := strings.Split(dealsScraped, "$") //separate string by dollar sign
 	var name = dealArray[0]
@@ -144,4 +139,15 @@ func writeToFile(fileName, lines string) {
 	if isError(err) {
 		return
 	}
+}
+
+//function that takes a deal slice/array and returns it in a pretty print json string format
+func dealSliceToString(deals [][]byte) string {
+	var jsonString string
+	for _, dealJson := range deals { //loop through each JSON and add it to jsonString
+		jsonString += (string(dealJson) + ",\n") //add a comma and a new line each dealJson
+		// var res Deal
+		// json.Unmarshal(bytes, &res) //returns it back to Deal struct
+	}
+	return jsonString
 }
