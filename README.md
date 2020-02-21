@@ -11,12 +11,17 @@ _Create your very own web scraper and crawler using Go and [Colly](https://go-co
 ### Feature
 ##### This web scraper scrapes the [eBay's](https://www.ebay.com/deals) featured deals and outputs a JSON in ```output.json``` file and in Echo
 
+-----
+
 ### Screenshot - output.json file
 <img src="https://github.com/SamuelFolledo/MakeScrape/blob/master/static/screenshots/scrapedDeals-JsonFile.png"> 
+
+-----
 
 ### Screenshot - Echo output to http://localhost:1323/scrape
 <img src="https://github.com/SamuelFolledo/MakeScrape/blob/master/static/screenshots/scrapedDeals-Echo.png"> 
 
+-----
 
 ### 📚 Table of Contents
 
