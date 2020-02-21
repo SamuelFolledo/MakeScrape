@@ -1,15 +1,20 @@
 package main
 
 import (
+	"encoding/json"
 	"fmt"
+	"log"
 	"net/http"
 	"strconv" //convert string to float
 	"strings"
 
+	//colly - colleting/web scraper
 	"github.com/gocolly/colly"
 	"github.com/gocolly/colly/debug"
-	"github.com/labstack/echo"
 
+	//echo - making it live
+	"github.com/labstack/echo"
+	//gorm - database CRUD
 	"github.com/jinzhu/gorm"
 	_ "github.com/jinzhu/gorm/dialects/sqlite"
 )
@@ -25,16 +30,6 @@ type Deal struct {
 // http://go-colly.org/docs/examples/basic/
 func main() {
 	scrapeEbay()
-
-	// db, err := gorm.Open("sqlite3", "test.db")
-	// if err != nil {
-	// 	panic("failed to connect database")
-	// }
-	// defer db.Close()
-
-	// var deal Deal
-	// db.First(&deal, 1)
-	// println("DEAL 1 = ", deal.Name)
 }
 
 func testDB() {
@@ -75,27 +70,17 @@ func scrapeEbay() {
 		colly.Debugger(&debug.LogDebugger{}), // Attach a debugger to the collector
 	)
 
-	// db, err := gorm.Open("sqlite3", "test.db")
-	// if err != nil {
-	// 	panic("failed to connect database")
-	// }
-	// defer db.Close()
-	// Migrate the schema
-	// db.AutoMigrate(&Deal{})
-
-	// c.Limit(&colly.LimitRule{ //limit must be use to async = true. replace httpbin to ebay.com
-	// 	DomainGlob:  "*httpbin.*", // when visiting links which domains' matches "*httpbin.*" glob
-	// 	Parallelism: 2,            // Limit the number of threads started by colly to two
-	// 	//Delay:      5 * time.Second,
-	// })
-
-	var deals []string
+	var deals [][]byte //a json is type []byte, so [][]byte creates a slice/array of []byte
 
 	// On every a element which has href attribute call callback
 	c.OnHTML("#refit-spf-container > div.sections-container > div.ebayui-dne-featured-card.ebayui-dne-featured-with-padding > div.ebayui-dne-item-featured-card.ebayui-dne-item-featured-card > div > div > div > div.dne-itemtile-detail", func(e *colly.HTMLElement) {
 		var dealsScraped = e.DOM.Text()
-		deals = append(deals, dealsScraped)
-		// deal := createDealFromScrapedText(dealsScraped)
+		deal := createDealFromScrapedText(dealsScraped)
+		dealJson, err := json.MarshalIndent(deal, "", "    ") //makes it more pretty printed
+		if err != nil {
+			log.Println(err)
+		}
+		deals = append(deals, dealJson) //create deals from scraped text and append to slice of Deal
 		// db.Create(&deal)
 	})
 
@@ -108,17 +93,18 @@ func scrapeEbay() {
 		fmt.Println("Finished", r.Request.URL)
 	})
 
-	e := echo.New() //create a server, inir xollt
+	e := echo.New() //create a server
 	e.GET("/scrape", func(ec echo.Context) (err error) {
 		c.Visit("https://www.ebay.com/deals")
 		c.Wait()
 
-		var firstDeal string
-		for _, item := range deals {
-			firstDeal += "- " + item + "\n"
+		var jsonString string
+		for _, dealJson := range deals { //loop through each JSON and add it to jsonString
+			jsonString += (string(dealJson) + "\n")
+			// var res Deal
+			// json.Unmarshal(bytes, &res) //returns it back to Deal struct
 		}
-		// return ec.JSON()
-		return ec.String(http.StatusOK, firstDeal)
+		return ec.String(http.StatusOK, jsonString)
 	})
 
 	e.Logger.Fatal(e.Start(":1323"))
@@ -131,13 +117,12 @@ func scrapeEbay() {
 func createDealFromScrapedText(dealsScraped string) Deal {
 	dealArray := strings.Split(dealsScraped, "$") //separate string by dollar sign
 	var name = dealArray[0]
-	currentPrice, _ := strconv.ParseFloat(dealArray[1], 8)
+	currentPrice, _ := strconv.ParseFloat(dealArray[1], 8) //ParseFloat converts the string s to a floating-point number with the precision specified by bitSize: 32 for float32, or 64 for float64.
 	var previousPrice float64
 	if len(dealArray) > 2 { //if array's length is > 2, then we have previousPrice
 		prev, _ := strconv.ParseFloat(dealArray[2], 8)
 		previousPrice = prev
 	}
-	// for index, word := range s {
 	print("\nDEAL IS ", name, " CURRENT PRICE = ", currentPrice, " PREVIOUSLY = ", previousPrice)
 	return Deal{Name: name, CurrentPrice: currentPrice, PreviousPrice: previousPrice}
 }
