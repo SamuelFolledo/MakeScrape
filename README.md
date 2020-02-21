@@ -8,6 +8,16 @@ _Create your very own web scraper and crawler using Go and [Colly](https://go-co
   <img width="230" height="230" src="https://github.com/SamuelFolledo/MakeSite/blob/master/static/myGopher.png">
 </p>
 
+### Feature
+##### This web scraper scrapes the top [eBay](ebay.com) featured deals and outputs a JSON in ```output.json``` file and in Echo
+
+### Screenshot - output.json file
+<img src="https://github.com/SamuelFolledo/MakeScrape/blob/master/static/screenshots/scrapedDeals-JsonFile.png" width="1288" height="651"> 
+
+### Screenshot - Echo output to http://localhost:1323/scrape
+<img src="https://github.com/SamuelFolledo/MakeScrape/blob/master/static/screenshots/scrapedDeals-Echo.png" width="956" height="1066"> 
+
+
 ### 📚 Table of Contents
 
 1. [Project Structure](#project-structure)
