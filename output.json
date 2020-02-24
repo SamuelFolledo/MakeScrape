@@ -3,8 +3,8 @@
     "CreatedAt": "0001-01-01T00:00:00Z",
     "UpdatedAt": "0001-01-01T00:00:00Z",
     "DeletedAt": null,
-    "name": "Champion Life Women's Tights, Vertical Logo",
-    "currentPrice": 14.7,
+    "name": "Three Strand Bracelet with Freshwater Pearls \u0026 CZ in Plated Bronze, 7\" + 1.5\"",
+    "currentPrice": 19.99,
     "previousPrice": 0
 },
 {
@@ -12,8 +12,8 @@
     "CreatedAt": "0001-01-01T00:00:00Z",
     "UpdatedAt": "0001-01-01T00:00:00Z",
     "DeletedAt": null,
-    "name": "Lenovo ideapad S540-14IWL Touch, 14.0\"FHD IPS Glare 1920x1080, Intel Core",
-    "currentPrice": 669.99,
+    "name": "Reebok Men's Rise Supreme RG Shoes",
+    "currentPrice": 22.99,
     "previousPrice": 0
 },
 {
@@ -21,7 +21,34 @@
     "CreatedAt": "0001-01-01T00:00:00Z",
     "UpdatedAt": "0001-01-01T00:00:00Z",
     "DeletedAt": null,
-    "name": "adidas Alphabounce+ Shoes Men's",
+    "name": "Cuisinart TOA-60 Convection Toaster Oven Air Fryer with Light, Silver",
+    "currentPrice": 109.99,
+    "previousPrice": 0
+},
+{
+    "ID": 0,
+    "CreatedAt": "0001-01-01T00:00:00Z",
+    "UpdatedAt": "0001-01-01T00:00:00Z",
+    "DeletedAt": null,
+    "name": "Porter-Cable pc.E211 7.5 Amp 1/2 in. Impact Wrench New",
+    "currentPrice": 69.99,
+    "previousPrice": 0
+},
+{
+    "ID": 0,
+    "CreatedAt": "0001-01-01T00:00:00Z",
+    "UpdatedAt": "0001-01-01T00:00:00Z",
+    "DeletedAt": null,
+    "name": "New Philips Saeco Incanto Automatic Espresso Machine w/ Aqua Clean Filter HD8911",
+    "currentPrice": 559,
+    "previousPrice": 0
+},
+{
+    "ID": 0,
+    "CreatedAt": "0001-01-01T00:00:00Z",
+    "UpdatedAt": "0001-01-01T00:00:00Z",
+    "DeletedAt": null,
+    "name": "LG OLED65C9PUA 65\" 4K Smart Ai OLED TV ThinQ Amazon Alexa Google 2019 OLED65C9P",
     "currentPrice": 0,
     "previousPrice": 0
 },
@@ -30,8 +57,8 @@
     "CreatedAt": "0001-01-01T00:00:00Z",
     "UpdatedAt": "0001-01-01T00:00:00Z",
     "DeletedAt": null,
-    "name": "Beaded Cuff Bracelet with Cubic Zirconias in Plated Bronze, 7\"",
-    "currentPrice": 18.79,
+    "name": "Sony PlayStation Plus 1 Year Membership Subscription Card - NEW!",
+    "currentPrice": 37.99,
     "previousPrice": 0
 },
 {
@@ -39,8 +66,8 @@
     "CreatedAt": "0001-01-01T00:00:00Z",
     "UpdatedAt": "0001-01-01T00:00:00Z",
     "DeletedAt": null,
-    "name": "Puma Platform Trace Sneakers Casual    - Burgundy - Womens",
-    "currentPrice": 27.96,
+    "name": "ASICS Gel-Quantum 180 4  Casual Running  Shoes - Blue - Womens",
+    "currentPrice": 49.99,
     "previousPrice": 0
 },
 {
@@ -48,7 +75,52 @@
     "CreatedAt": "0001-01-01T00:00:00Z",
     "UpdatedAt": "0001-01-01T00:00:00Z",
     "DeletedAt": null,
-    "name": "Sunforce 100 LED Twin Head Solar Motion Light with Corner Mounting Feature 82112",
+    "name": "Invicta Men's Specialty Quartz Green Dial Rose Gold Stainless Steel Watch 29391",
+    "currentPrice": 54.99,
+    "previousPrice": 0
+},
+{
+    "ID": 0,
+    "CreatedAt": "0001-01-01T00:00:00Z",
+    "UpdatedAt": "0001-01-01T00:00:00Z",
+    "DeletedAt": null,
+    "name": "WORX WG512 TriVAC 12 Amp Electric 3-in-1 Leaf Blower/Mulcher/Yard Vacuum",
+    "currentPrice": 44.99,
+    "previousPrice": 0
+},
+{
+    "ID": 0,
+    "CreatedAt": "0001-01-01T00:00:00Z",
+    "UpdatedAt": "0001-01-01T00:00:00Z",
+    "DeletedAt": null,
+    "name": "PARIS OF MY DREAMS - LEONID AFREMOV - ART POSTER 24x36 - 11450",
+    "currentPrice": 4.95,
+    "previousPrice": 0
+},
+{
+    "ID": 0,
+    "CreatedAt": "0001-01-01T00:00:00Z",
+    "UpdatedAt": "0001-01-01T00:00:00Z",
+    "DeletedAt": null,
+    "name": "Clarks Men's   Un Costa Lace Sneaker",
+    "currentPrice": 81.31,
+    "previousPrice": 0
+},
+{
+    "ID": 0,
+    "CreatedAt": "0001-01-01T00:00:00Z",
+    "UpdatedAt": "0001-01-01T00:00:00Z",
+    "DeletedAt": null,
+    "name": "Zinus 11 in Quick Snap Standing Mattress Foundation / Low profile Platform Bed",
+    "currentPrice": 115.3,
+    "previousPrice": 0
+},
+{
+    "ID": 0,
+    "CreatedAt": "0001-01-01T00:00:00Z",
+    "UpdatedAt": "0001-01-01T00:00:00Z",
+    "DeletedAt": null,
+    "name": "Skullcandy - Indy True Wireless In-Ear Headphones - Black",
     "currentPrice": 29.99,
     "previousPrice": 0
 },
@@ -57,8 +129,8 @@
     "CreatedAt": "0001-01-01T00:00:00Z",
     "UpdatedAt": "0001-01-01T00:00:00Z",
     "DeletedAt": null,
-    "name": "Apple AirPods 2 with Charging Case MV7N2AM/A - White",
-    "currentPrice": 104.99,
+    "name": "Roll of 20 - 2020 1 oz Silver Australian Bull and Bear Coin Perth Mint .9999",
+    "currentPrice": 529.51,
     "previousPrice": 0
 },
 {
@@ -66,8 +138,8 @@
     "CreatedAt": "0001-01-01T00:00:00Z",
     "UpdatedAt": "0001-01-01T00:00:00Z",
     "DeletedAt": null,
-    "name": "Dyson V7 Animal + Cordless HEPA Vacuum | Refurbished",
-    "currentPrice": 229.99,
+    "name": "Oakley OO9135-05 Men's Jupiter Non Polarized Square  Sunglasses Polished",
+    "currentPrice": 56.39,
     "previousPrice": 0
 },
 {
@@ -75,8 +147,8 @@
     "CreatedAt": "0001-01-01T00:00:00Z",
     "UpdatedAt": "0001-01-01T00:00:00Z",
     "DeletedAt": null,
-    "name": "ASICS GEL-Contend 5  Casual Running Stability Shoes - Grey - Mens",
-    "currentPrice": 31.96,
+    "name": "New Cobra King F8+ Plus Driver F-8 - Choose RH/LH Color Shaft FlexFree shippingMore options",
+    "currentPrice": 0,
     "previousPrice": 0
 },
 {
@@ -84,8 +156,8 @@
     "CreatedAt": "0001-01-01T00:00:00Z",
     "UpdatedAt": "0001-01-01T00:00:00Z",
     "DeletedAt": null,
-    "name": "Obsession Cologne by Calvin Klein, 4 oz EDT Spray for Men NEW IN BOX",
-    "currentPrice": 20.2,
+    "name": "Nintendo 2DS (Scarlet Red) - REFURBISHED BY NINTENDO - Warranty Included",
+    "currentPrice": 0,
     "previousPrice": 0
 },
 {
@@ -93,17 +165,8 @@
     "CreatedAt": "0001-01-01T00:00:00Z",
     "UpdatedAt": "0001-01-01T00:00:00Z",
     "DeletedAt": null,
-    "name": "DEWALT 5.5 Amp 1 in. Compact Jigsaw Kit DW317KR Recon",
-    "currentPrice": 77.99,
-    "previousPrice": 0
-},
-{
-    "ID": 0,
-    "CreatedAt": "0001-01-01T00:00:00Z",
-    "UpdatedAt": "0001-01-01T00:00:00Z",
-    "DeletedAt": null,
-    "name": "New Taylormade Spider Tour Platinum Putter - Choose Length - Superstroke Grip",
-    "currentPrice": 102.99,
+    "name": "Hoover SmartWash Automatic Carpet Cleaner / Washer - Refurbished FH52000RM",
+    "currentPrice": 109.99,
     "previousPrice": 0
 },
 {
@@ -120,8 +183,8 @@
     "CreatedAt": "0001-01-01T00:00:00Z",
     "UpdatedAt": "0001-01-01T00:00:00Z",
     "DeletedAt": null,
-    "name": "SPECIAL PRICE! 1 oz Gold Eagle Coin (BU Condition) with Stainless Steel Bezel",
-    "currentPrice": 0,
+    "name": "GoPro HERO8 Black 12 MP Waterproof 4K Camera Camcorder + Ultimate Action Bundle",
+    "currentPrice": 349.99,
     "previousPrice": 0
 },
 {
@@ -129,8 +192,8 @@
     "CreatedAt": "0001-01-01T00:00:00Z",
     "UpdatedAt": "0001-01-01T00:00:00Z",
     "DeletedAt": null,
-    "name": "Makita LXT 18V Li-Ion Reciprocating Saw (Tool Only) XRJ04Z-R Reconditioned",
-    "currentPrice": 89.99,
+    "name": "KitchenAid Refurbished Artisan Series 5 Quart Tilt-Head Stand Mixer, RRK150",
+    "currentPrice": 199.99,
     "previousPrice": 0
 },
 {
@@ -138,8 +201,8 @@
     "CreatedAt": "0001-01-01T00:00:00Z",
     "UpdatedAt": "0001-01-01T00:00:00Z",
     "DeletedAt": null,
-    "name": "Apple Watch - Series 5 - GPS - 44mm - 1 Year Apple Warranty - Brand New!",
-    "currentPrice": 409.99,
+    "name": "Hitachi 7-1/4 in. 15 A 6,800 RPM RIPMAX Pro Circular Saw C7UR Recon",
+    "currentPrice": 77.99,
     "previousPrice": 0
 },
 {
@@ -147,70 +210,7 @@
     "CreatedAt": "0001-01-01T00:00:00Z",
     "UpdatedAt": "0001-01-01T00:00:00Z",
     "DeletedAt": null,
-    "name": "NEW HTC VIVE Virtual Reality System VR Headset",
-    "currentPrice": 559,
-    "previousPrice": 0
-},
-{
-    "ID": 0,
-    "CreatedAt": "0001-01-01T00:00:00Z",
-    "UpdatedAt": "0001-01-01T00:00:00Z",
-    "DeletedAt": null,
-    "name": "Star Wars Force Resistance A-Wing Fighter and Resistance Pilot Tallie Figure",
-    "currentPrice": 19.99,
-    "previousPrice": 0
-},
-{
-    "ID": 0,
-    "CreatedAt": "0001-01-01T00:00:00Z",
-    "UpdatedAt": "0001-01-01T00:00:00Z",
-    "DeletedAt": null,
-    "name": "Apple iPhone 7+ Plus - 32GB 128GB 256GB GSM \"Factory Unlocked\" Smartphone Phone*",
-    "currentPrice": 0,
-    "previousPrice": 0
-},
-{
-    "ID": 0,
-    "CreatedAt": "0001-01-01T00:00:00Z",
-    "UpdatedAt": "0001-01-01T00:00:00Z",
-    "DeletedAt": null,
-    "name": "Powerbuilt 2 in 1, 12 Volt Electric Floor Jack and Tire Inflator, 1 Ton,  620484",
-    "currentPrice": 87.99,
-    "previousPrice": 0
-},
-{
-    "ID": 0,
-    "CreatedAt": "0001-01-01T00:00:00Z",
-    "UpdatedAt": "0001-01-01T00:00:00Z",
-    "DeletedAt": null,
-    "name": "Michael Kors Jet Set Medium Carryall Tote MK Signature Brown Vanilla Pink Black",
-    "currentPrice": 87,
-    "previousPrice": 0
-},
-{
-    "ID": 0,
-    "CreatedAt": "0001-01-01T00:00:00Z",
-    "UpdatedAt": "0001-01-01T00:00:00Z",
-    "DeletedAt": null,
-    "name": "Sony Alpha a7 III Mirrorless Digital Camera (Body Only)  ILCE7M3/B",
-    "currentPrice": 0,
-    "previousPrice": 0
-},
-{
-    "ID": 0,
-    "CreatedAt": "0001-01-01T00:00:00Z",
-    "UpdatedAt": "0001-01-01T00:00:00Z",
-    "DeletedAt": null,
-    "name": "adidas Crazy 8 ADV  Casual Basketball  Shoes - Red - Womens",
-    "currentPrice": 47.96,
-    "previousPrice": 0
-},
-{
-    "ID": 0,
-    "CreatedAt": "0001-01-01T00:00:00Z",
-    "UpdatedAt": "0001-01-01T00:00:00Z",
-    "DeletedAt": null,
-    "name": "KitchenAid Refurbished 3.5 Cup Food Chopper, RKFC3516",
-    "currentPrice": 0,
+    "name": "Creative Bioscience 1234 Diet Drops Weight Loss Supplement Fat Burner - HCG Free",
+    "currentPrice": 27.99,
     "previousPrice": 0
 },
