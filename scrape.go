@@ -113,9 +113,12 @@ func scrapeEbay() {
 //creates a Deal instance from a string
 func createDealFromScrapedText(dealsScraped string) Deal {
 	dealArray := strings.Split(dealsScraped, "$") //separate string by dollar sign
-	var name = dealArray[0]
+	var name string
 	var currentPrice float64 //ParseFloat converts the string s to a floating-point number with the precision specified by bitSize: 32 for float32, or 64 for float64.
 	var previousPrice float64
+	if len(dealArray) > 0 {
+		name = dealArray[0]
+	}
 	if len(dealArray) > 1 {
 		current, _ := strconv.ParseFloat(dealArray[1], 8)
 		currentPrice = current
@@ -154,4 +157,10 @@ func dealSliceToString(deals [][]byte) string {
 		// json.Unmarshal(bytes, &res) //returns it back to Deal struct
 	}
 	return jsonString
+}
+
+// Calculate returns x + 2.
+func Calculate(x int) (result int) {
+	result = x + 2
+	return result
 }
