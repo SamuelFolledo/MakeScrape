@@ -9,6 +9,8 @@ UNIT TEST
 BENCHMARK TEST
 - $ go test -bench=. //runs all benchmarks within our package
 - $ go test -run=Calculate -bench=. //runs all bench test with Calculate in test function name
+
+TEST GENERATOR: https://github.com/cweill/gotests
 */
 
 import (
